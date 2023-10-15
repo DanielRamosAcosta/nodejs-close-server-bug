@@ -8,6 +8,11 @@ export const FetchType = {
 };
 
 export function nativeFetch(url) {
+  if (!("fetch" in globalThis)) {
+    console.log("No native fetch support, skipping");
+    process.exit(0);
+  }
+
   return globalThis.fetch(url);
 }
 
