@@ -48,7 +48,7 @@ export function fetch(params, type = FetchType.NATIVE) {
   switch (type) {
     case FetchType.NATIVE:
       return nativeFetch(params);
-    case FetchType.NODE:
+    case FetchType.LIBRARY:
       return nodeFetch(params);
     case FetchType.REQUEST:
       return requestFetch(params);
